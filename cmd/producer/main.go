@@ -10,7 +10,7 @@ import (
 func main() {
 	deliveryChannel := make(chan kafka.Event)
 	producer := NewKafkaProducer()
-	Publish("hello", "TESTE", producer, nil, deliveryChannel)
+	Publish("hello", "TESTE", producer, []byte("transfer"), deliveryChannel)
 
 	// Asynchronously deliver
 	go DeliveryReport(deliveryChannel)
@@ -26,7 +26,7 @@ func main() {
 
 	fmt.Println("After calling delivery")
 
-	producer.Flush(1 * 1000)
+	producer.Flush(2 * 1000)
 }
 
 func NewKafkaProducer() *kafka.Producer {
