@@ -31,7 +31,10 @@ func main() {
 
 func NewKafkaProducer() *kafka.Producer {
 	configMap := &kafka.ConfigMap{
-		"bootstrap.servers": "kafka_kafka_1:9092",
+		"bootstrap.servers":   "kafka_kafka_1:9092",
+		"delivery.timeout.ms": "3500",
+		"acks":                "all", // 0 - No ack, 1 - local (only leader), all - all replicas
+		"enable.idempotence":  true,  // if true, acks must be all
 	}
 
 	p, err := kafka.NewProducer(configMap)

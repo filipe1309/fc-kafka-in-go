@@ -16,3 +16,5 @@ docker exec -it kafka_kafka_1 bash
 kafka-topics --bootstrap-server=localhost:9092 --create --topic=TESTE --partitions=3
 kafka-console-consumer --bootstrap-server=localhost:9092 --topic=TESTE
 ```
+
+https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
