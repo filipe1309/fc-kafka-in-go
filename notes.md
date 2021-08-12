@@ -22,3 +22,7 @@ https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
 ```sh
 go run cmd/consumer/main.go
 ```
+
+```sh
+kafka-consumer-groups --bootstrap-server=localhost:9092 --describe --group=goapp-group
+```
