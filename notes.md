@@ -18,3 +18,7 @@ kafka-console-consumer --bootstrap-server=localhost:9092 --topic=TESTE
 ```
 
 https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
+
+```sh
+go run cmd/consumer/main.go
+```
